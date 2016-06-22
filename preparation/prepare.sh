@@ -8,7 +8,6 @@ usage ()
   echo "Creates a Wikipedia repository which can be fed into SMILK Named Entity Linking tools."
 }
 
-
 if [ "$#" -ne 2 ]
 then
   usage
@@ -40,7 +39,6 @@ mkdir -p "$MAPDB_DIR"
 xmlstarlet ed -L -u "config/models/default" -v $LANGUAGE  $xmlconfige
 xmlstarlet ed -L -u "config/models/model[name='$LANGUAGE']/path" -v $BASE_DIR/$WDIR  $xmlconfige
  
-
 source $(pwd)/wiki2json.sh
 source $(pwd)/extract.sh
 
