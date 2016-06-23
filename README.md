@@ -37,7 +37,7 @@ Now, you'll want to modify the paths to the repository in `src/main/webapp/WEB-I
 
 In order to create the `.war`, you can execute: `mvn package`. You'll find `SmilkNel-rest.war` in the `target/` folder. All it's left to do is to copy the `.war` in the `webapps/` folder of Tomcat and you should be good to go.
 
-To start the Web Service you can simply execute `source init/tomcat-init.sh` and afterwards `./startup.sh` from the `bin` folder of Tomcat. The log is available at `logs/catalina.out` (you can followed it "interactively" by using `tail -f` for instace). 
+To start the Web Service you can simply execute `source init/tomcat-init.sh` and afterwards `./startup.sh` from the `bin/` folder of Tomcat. The log is available at `logs/catalina.out` (you can followed it "interactively" by using `tail -f` for instace). 
 
 The script `tomcat-init.sh` should work out-of-the-box for Debian-based Linux distros. You might need to modify `CATALINA_HOME` with the path to your `webapps/` folder and `JRE_HOME` to your jre installation folder.
 
@@ -55,9 +55,9 @@ Here is a working example of a POST request for this Web Service in Python (usin
 ```python
 import requests
 url = "http://localhost:8080/smilkNel-rest/webresources/annotate/en?spotter=wiki&method=linear"
-text = "A guy at Best Bey told me that Samsung Gear Fit 2 will count your floors too!"
+text = "A guy at BestBuy told me that Samsung Gear Fit 2 will count your floors too!"
 
 r = request.post(url, data = text)
-#print(r)
+print(r) # status
+print(r.text) # annotated spots
 ```  
-After executing this, you'll find in the logs the spotted named entities and their associated Wikipedia ids.
