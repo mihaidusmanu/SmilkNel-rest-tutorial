@@ -37,8 +37,9 @@ Now, you'll want to modify the paths to the repository in `src/main/webapp/WEB-I
 
 In order to create the `.war`, you can execute: `mvn package`. You'll find `SmilkNel-rest.war` in the `target/` folder. All it's left to do is to copy the `.war` in the `webapps/` folder of Tomcat and you should be good to go.
 
+To start the Web Service you can simply execute `source init/tomcat-init.sh` and afterwards `./startup.sh` from the `bin` folder of Tomcat. The log is available at `logs/catalina.out` (you can followed it "interactively" by using `tail -f` for instace). 
 
-To start the Web Service you can simply execute the `./startup.sh` from the `bin` folder of Tomcat. The log is available at `logs/catalina.out` (you can followed it "interactively" by using `tail -f` for instace).
+The script `tomcat-init.sh` should work out-of-the-box for Debian-based Linux distros. You might need to modify `CATALINA_HOME` with the path to your `webapps/` folder and `JRE_HOME` to your jre installation folder.
 
 # Using the Web Service
 
