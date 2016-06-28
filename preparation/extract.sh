@@ -10,7 +10,7 @@ echo "Sort by id"
 sort -t"	" -nk3 $TITLE_FILE > $TMP
 mv  $TMP  $TITLE_FILE
 echo "Indexing id -> label"
-$DEXTER_JAVA  it.cnr.isti.hpc.dexter.cli.label.IndexIdT   oLabelCLI -input $TITLE_FILE
+$DEXTER_JAVA  it.cnr.isti.hpc.dexter.cli.label.IndexIdToLabelCLI -input $TITLE_FILE
 echo "Sort by title"
 sort -k1 $TITLE_FILE > $TMP
 mv  $TMP $TITLE_FILE
