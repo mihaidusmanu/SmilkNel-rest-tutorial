@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <config>
   <models>
-
+    <default>en</default>
+    <model>
+      <name>fr</name>
+      <path>/data/dexter-smilk/fr.data</path>
+      <sparqlendpoint>http://fr.dbpedia.org/sparql</sparqlendpoint>
+      <access>local</access>
+    </model>
+    <model>
+      <name>en</name>
+      <path>/data/dexter-smilk/en.data</path>
+      <sparqlendpoint>http://dbpedia.org/sparql</sparqlendpoint>
+      <access>local</access>
+    </model>
   </models>
   <labels>
     <dir>mapdb</dir>
